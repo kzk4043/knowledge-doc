@@ -9,8 +9,8 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
   image: {
-    src: "",
-    alt: "",
+    src: "/kzk4043-logo.png",
+    alt: "kzk4043 logo",
   },
   twitter: "",
 };
