@@ -37,7 +37,7 @@ export const SIDEBAR = [
 
   // プロジェクトマネジメント
   { text: "プロジェクトマネジメント", header: true },
-  { text: "Buttons", link: "/project-management/introduction" },
+  { text: "Introduction", link: "/project-management/introduction" },
 
   // フロントエンド
   { text: "フロントエンド", header: true },

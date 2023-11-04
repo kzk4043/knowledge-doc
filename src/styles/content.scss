@@ -1,3 +1,12 @@
+/* カスタムフォントファミリーを登録し、ブラウザにその場所を知らせます。 */
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .content {
   h1,
   h2,
@@ -35,7 +44,7 @@
   }
 
   code {
-    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    font-family: "Fira Code", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
       Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
