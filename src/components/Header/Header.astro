@@ -14,10 +14,17 @@ const { currentPage } = Astro.props;
     class="max-w-7xl mx-auto flex justify-between items-center px-4"
   >
     <div>
-      <a class="font-sans text-lg font-medium" href="/">
-        <h1>
+      <a class="font-sans text-lg font-medium flex gap-x-3" href="/">
+        <svg
+          class="h-7"
+          viewBox="0 0 256 256"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <use xlink:href="/icons/kzk4043-logo.svg#horse"></use>
+        </svg>
+        <p>
           {SITE.title ?? "Documentation"}
-        </h1>
+        </p>
       </a>
     </div>
     <div class="flex gap-2">

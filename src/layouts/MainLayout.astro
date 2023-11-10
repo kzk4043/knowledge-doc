@@ -8,7 +8,7 @@ import RightSidebar from "../components/RightSidebar.astro";
 import * as CONFIG from "../config";
 import "../styles/main.scss";
 
-const { content = {} } = Astro.props;
+const { content = {}, headings = [] } = Astro.props;
 const currentPage = new URL(Astro.request.url).pathname;
 // const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
 ---
@@ -34,21 +34,27 @@ const currentPage = new URL(Astro.request.url).pathname;
     <div class="sticky top-0 z-10 w-full">
       <Header currentPage={currentPage} />
     </div>
-    <div class="grid grid-cols-12">
-      <div class="col-span-3 sticky top-0 pt-12 h-screen flex">
+    <div class="max-w-7xl mx-auto px-4">
+      <div
+        class="hidden lg:block fixed z-20 inset-0 top-[4.5rem] left-[max(0px,calc(50%-42rem))] right-auto w-[19rem] pb-10 pl-8 pr-6 overflow-y-auto"
+      >
         <div class="ml-auto">
           <LeftSidebar currentPage={currentPage} />
         </div>
       </div>
-      <main class="py-4 px-8 pb-32 col-span-6 overflow-auto">
-        <div>
+      <main class="lg:pl-[19rem]">
+        <div
+          class="max-w-4xl mx-auto pt-7 xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-16"
+        >
           <PageContent content={content}>
             <slot />
           </PageContent>
         </div>
       </main>
-      <div class="col-span-3 sticky top-0 h-screen flex">
-        <RightSidebar content={content} />
+      <div
+        class="fixed z-20 top-[4.5rem] bottom-0 right-[max(0px,calc(50%-42rem))] w-[19rem] py-3 overflow-y-auto hidden xl:block"
+      >
+        <RightSidebar headings={headings} />
       </div>
     </div>
   </body>
