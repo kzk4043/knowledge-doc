@@ -4,7 +4,7 @@ export const SITE = {
   defaultLanguage: "ja_JP",
   twitter: "@kzk4043",
   github: "kzk4043",
-  // linkedin: "linkedinUsername",
+  zenn: "soma3134",
 };
 
 export const OPEN_GRAPH = {
@@ -21,7 +21,7 @@ export const OPEN_GRAPH = {
 export const SIDEBAR = [
   // TODO: 余分なリンク消す
   // { text: "Core", header: true },
-  { text: "Introduction", link: "/core/introduction" },
+  // { text: "Introduction", link: "/core/introduction" },
   // { text: "Colors", link: "/core/colors" },
   // { text: "Typography", link: "/core/typography" },
   // { text: "Shadows", link: "/core/shadows" },
