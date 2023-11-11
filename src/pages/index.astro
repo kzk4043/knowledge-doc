@@ -40,8 +40,8 @@ const navItems = SIDEBAR.filter((item) => item.header);
       </h1>
       <p class="text-lg mt-4 text-slate-300">{SITE.description}</p>
     </header>
-    <nav>
-      <ul class="flex gap-4 max-w-5xl mx-auto text-left mt-12">
+    <nav class="p-12">
+      <ul class="flex gap-4 max-w-5xl mx-auto text-left">
         {
           navItems.map(({ text, description, url, image }) => (
             <a
