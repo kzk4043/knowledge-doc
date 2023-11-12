@@ -38,7 +38,13 @@ const navItems = SIDEBAR.filter((item) => item.header);
       <h1 class="font-sans text-white text-4xl font-medium drop-shadow-sm">
         {SITE.title}
       </h1>
-      <p class="text-lg mt-4 text-slate-300">{SITE.description}</p>
+      <p class="text-lg mt-4 text-slate-300">
+        {SITE.description}<br />
+         ポートフォリオは<a
+          class="text-[#2563eb] hover:opacity-70"
+          href={SITE.portfolio}>こちら（別サイト）</a
+        >
+      </p>
     </header>
     <nav class="p-12">
       <ul class="flex gap-4 max-w-5xl mx-auto text-left">

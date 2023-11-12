@@ -5,6 +5,7 @@ export const SITE = {
   twitter: "@kzk4043",
   github: "kzk4043",
   zenn: "soma3134",
+  portfolio: "https://kzk4043-portfolio.netlify.app",
 };
 
 export const OPEN_GRAPH = {
