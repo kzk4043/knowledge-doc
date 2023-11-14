@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.0",
+    "@astrojs/mdx": "^1.1.4",
     "@astrojs/vue": "^3.0.3",
     "@docsearch/css": "^3.0.0",
     "@docsearch/react": "^3.0.0",

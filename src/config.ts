@@ -37,7 +37,7 @@ export const SIDEBAR = [
   // { text: "Introduction", link: "/patterns/introduction" },
 
   // 全体/一般
-  { text: "全体/一般", header: true, description: "勉強法、仕事術、採用など", url: "/general/introduction", image: "/images/general.png" },
+  { text: "全体/一般", header: true, description: "このサイトについて、勉強法、仕事術、採用など", url: "/general/introduction", image: "/images/general.png" },
   { text: "Introduction", link: "/general/introduction" },
 
   // プロジェクトマネジメント

@@ -5,6 +5,21 @@ layout: ../../layouts/MainLayout.astro
 ---
 
 [こちら](https://github.com/jordienr/astro-design-system)のテンプレートを使用
+→[公開中](https://kzk4043-knowledge-base.netlify.app)
+
+TODO
+
+- [] レスポンシブ
+- [] ダークモード
+- [] 右サイドバーを Heading のレベルで出し分け
+  - 今いる場所を強調
+- [] 無駄なファイル消す
+  - 画像
+  - コンポーネント
+  - ページ
+- [] Google Analytics
+- [] RSS feed
+- [] title, logo
 
 # Astro Design System Theme
 
