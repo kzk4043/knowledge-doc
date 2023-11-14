@@ -29,6 +29,18 @@ const currentPage = new URL(Astro.request.url).pathname;
       }
     </title>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2PLQ9T3RQE"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-2PLQ9T3RQE");
+  </script>
 
   <body class="bg-slate-100">
     <div class="sticky top-0 z-10 w-full">
