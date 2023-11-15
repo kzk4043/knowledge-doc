@@ -24,7 +24,7 @@ const currentPage = new URL(Astro.request.url).pathname;
     <title>
       {
         content.title
-          ? `${content.title} 🚀 ${CONFIG.SITE.title}`
+          ? `${content.title} | ${CONFIG.SITE.title}`
           : CONFIG.SITE.title
       }
     </title>
