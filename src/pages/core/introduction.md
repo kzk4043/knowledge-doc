@@ -1,5 +1,6 @@
 ---
 title: Introduction
+pubDate: "2023/11/15"
 description: Docs intro
 layout: ../../layouts/MainLayout.astro
 ---

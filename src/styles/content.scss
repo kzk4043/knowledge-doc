@@ -34,8 +34,13 @@
     margin-top: 0.77rem;
     color: theme("colors.slate.600");
   }
-  a {
+  a.text-link {
     color: theme("colors.blue.600");
+
+    &:hover {
+      opacity: .8;
+      text-decoration: underline;
+    }
   }
 
   pre.astro-code {

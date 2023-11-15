@@ -1,5 +1,6 @@
 ---
 title: "Buttons"
+pubDate: "2023/11/15"
 layout: "../../layouts/MainLayout.astro"
 setup: |
   import MainButton from '../../components/MainButton.vue'

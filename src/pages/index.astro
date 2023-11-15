@@ -34,7 +34,7 @@ const navItems = SIDEBAR.filter((item) => item.header);
     gtag("config", "G-2PLQ9T3RQE");
   </script>
 
-  <div class="bg-slate-100 min-h-screen text-center">
+  <div class="bg-slate-100 min-h-screen text-center content">
     <header class="pt-12 pb-24 px-4 bg-gradient-to-br from-slate-700 to-black">
       <div class="flex items-center justify-center p-4">
         <div class="text-slate-300">
@@ -52,10 +52,13 @@ const navItems = SIDEBAR.filter((item) => item.header);
         {SITE.title}
       </h1>
       <p class="text-lg mt-4 text-slate-300">
-        {SITE.description}<br />
-         ポートフォリオは<a
-          class="text-[#2563eb] hover:opacity-70"
-          href={SITE.portfolio}>こちら（別サイト）</a
+        {SITE.description}（ <a href="rss.xml" class="text-link">
+          <img src="/icons/rss.svg" alt="rss feed" class="inline w-4" /> RSS
+          feed
+        </a>）<br />
+         kzk4043のポートフォリオ（別サイト）は<a
+          href={SITE.portfolio}
+          class="text-link">こちら</a
         >
       </p>
     </header>

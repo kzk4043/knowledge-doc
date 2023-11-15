@@ -30,13 +30,13 @@ const { currentPage } = Astro.props;
     <div class="flex gap-2">
       <!-- <button onclick="toggleDarkMode()">theme</button> -->
       {
-        SITE.twitter && (
+        (
           <a
-            title="Twitter"
+            title="rss feed"
             class="opacity-90 hover:opacity-100 hover:bg-blue-100 p-2 rounded-full transition-colors"
-            href={"https://twitter.com/" + SITE.twitter}
+            href="/rss.xml"
           >
-            <img class="h-7" src="/icons/twitter.svg" alt="twitter logo" />
+            <img class="h-7" src="/icons/rss.svg" alt="rss feed logo" />
           </a>
         )
       }
@@ -55,7 +55,7 @@ const { currentPage } = Astro.props;
         SITE.zenn && (
           <a
             title="zenn"
-            class="opacity-80 hover:opacity-100 hover:bg-blue-50 p-2 rounded-full transition-colors"
+            class="opacity-80 hover:opacity-100 hover:bg-slate-200 p-2 rounded-full transition-colors"
             href={"https://zenn.dev/" + SITE.zenn}
           >
             <img class="h-7" src="/icons/zenn.svg" alt="zenn logo" />

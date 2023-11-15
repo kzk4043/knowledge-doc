@@ -1,5 +1,6 @@
 ---
 title: "Status Pill"
+pubDate: "2023/11/15"
 layout: "../../layouts/MainLayout.astro"
 setup: |
   import MainStatusPill from '../../components/MainStatusPill.vue'

@@ -1,5 +1,6 @@
 ---
 title: Input
+pubDate: "2023/11/15"
 layout: ../../layouts/MainLayout.astro
 setup: |
   import MainInput from '../../components/MainInput.vue'
