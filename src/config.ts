@@ -37,14 +37,32 @@ export const SIDEBAR = [
   // { text: "Introduction", link: "/patterns/introduction" },
 
   // 全体/一般
-  { text: "全体/一般", header: true, description: "このサイトについて、勉強法、仕事術、採用など", url: "/general/introduction", image: "/images/general.png" },
+  {
+    text: "全体/一般",
+    header: true,
+    description: "このサイトについて、勉強法、仕事術、採用など",
+    url: "/general/introduction",
+    image: "/images/general.png",
+  },
   { text: "Introduction", link: "/general/introduction" },
 
   // プロジェクトマネジメント
-  { text: "プロジェクトマネジメント", header: true, description: "プロジェクトの進め方", url: "/project-management/introduction", image: "/images/project-management.png" },
+  {
+    text: "プロジェクトマネジメント",
+    header: true,
+    description: "プロジェクトの進め方",
+    url: "/project-management/introduction",
+    image: "/images/project-management.png",
+  },
   { text: "Introduction", link: "/project-management/introduction" },
 
   // フロントエンド
-  { text: "フロントエンド", header: true, description: "フロントエンドの環境構築、抑えておきたい技術についてなど", url: "/frontend/introduction", image: "/images/frontend.png" },
+  {
+    text: "フロントエンド",
+    header: true,
+    description: "フロントエンドの環境構築、抑えておきたい技術についてなど",
+    url: "/frontend/introduction",
+    image: "/images/frontend.png",
+  },
   { text: "Introduction", link: "/frontend/introduction" },
 ];
