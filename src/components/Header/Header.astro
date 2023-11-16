@@ -36,7 +36,15 @@ const { currentPage } = Astro.props;
             class="opacity-90 hover:opacity-100 hover:bg-blue-100 p-2 rounded-full transition-colors"
             href="/rss.xml"
           >
-            <img class="h-7" src="/icons/rss.svg" alt="rss feed logo" />
+            <svg
+              class="h-7 w-7 text-slate-500 hover:text-[#FFA500]"
+              width="256px"
+              height="256px"
+              viewBox="0 0 8 8"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <use xlink:href="/icons/rss.svg#rss" />
+            </svg>
           </a>
         )
       }
@@ -47,7 +55,15 @@ const { currentPage } = Astro.props;
             class="opacity-80 hover:opacity-100 hover:bg-slate-200 p-2 rounded-full transition-colors"
             href={"https://github.com/" + SITE.github}
           >
-            <img class="h-7" src="/icons/github.svg" alt="github logo" />
+            <svg
+              class="h-7 w-7 text-slate-500 hover:text-black"
+              width="256px"
+              height="256px"
+              viewBox="0 0 32 32"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <use xlink:href="/icons/github.svg#github" />
+            </svg>
           </a>
         )
       }
@@ -58,7 +74,15 @@ const { currentPage } = Astro.props;
             class="opacity-80 hover:opacity-100 hover:bg-slate-200 p-2 rounded-full transition-colors"
             href={"https://zenn.dev/" + SITE.zenn}
           >
-            <img class="h-7" src="/icons/zenn.svg" alt="zenn logo" />
+            <svg
+              class="h-7 w-7 text-slate-500 hover:text-[#3EA8FF]"
+              width="256px"
+              height="256px"
+              viewBox="0 0 24 24"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <use xlink:href="/icons/zenn.svg#zenn" />
+            </svg>
           </a>
         )
       }
