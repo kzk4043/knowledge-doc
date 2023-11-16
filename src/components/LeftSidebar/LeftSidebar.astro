@@ -1,0 +1,32 @@
+---
+import { SIDEBAR } from "../../config";
+import SidebarListItem from "./SidebarListItem.astro";
+
+const { currentPage } = Astro.props;
+---
+
+<aside title="Site Navigation">
+  <!-- <Debug content={navigation} /> -->
+  <nav aria-labelledby="grid-left" class="w-64 p-4 border-r">
+    <ul class="pt-2">
+      {
+        SIDEBAR.map((item) =>
+          item.header ? (
+            <h2 class="mt-4 font-semibold text-slate-700">{item.text}</h2>
+          ) : (
+            <SidebarListItem currentPage={currentPage} item={item} />
+          ),
+        )
+      }
+    </ul>
+  </nav>
+</aside>
+
+<script is:inline>
+  window.addEventListener("DOMContentLoaded", (event) => {
+    var target = document.querySelector('[aria-current="page"]');
+    if (target && target.offsetTop > window.innerHeight - 100) {
+      document.querySelector(".nav-groups").scrollTop = target.offsetTop;
+    }
+  });
+</script>

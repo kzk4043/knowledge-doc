@@ -10,7 +10,8 @@ module.exports = {
       },
       colors: {
         "main-blue": "rgba(29,200,215,1)",
-        "main-blue-15": "rgba(29,200,215,.15)",
+        "main-blue-20": "rgba(29,200,215,.2)",
+        "main-blue-05": "rgba(29,200,215,.05)",
       },
     },
   },
