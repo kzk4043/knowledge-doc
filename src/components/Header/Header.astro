@@ -1,8 +1,6 @@
 ---
 import { SITE } from "../../config";
 import SkipToContent from "./SkipToContent.astro";
-
-const { currentPage } = Astro.props;
 ---
 
 <header
@@ -28,6 +26,18 @@ const { currentPage } = Astro.props;
       </a>
     </div>
     <div class="flex gap-2">
+      <!-- aタグがホバーされたときにsvgだけ色を変える -->
+      <style>
+        a:hover svg.orange {
+          color: #ffa500;
+        }
+        a:hover svg.black {
+          color: #000000;
+        }
+        a:hover svg.blue {
+          color: #3ea8ff;
+        }
+      </style>
       <!-- <button onclick="toggleDarkMode()">theme</button> -->
       {
         (
@@ -37,7 +47,7 @@ const { currentPage } = Astro.props;
             href="/rss.xml"
           >
             <svg
-              class="h-7 w-7 text-slate-500 hover:text-[#FFA500]"
+              class="h-7 w-7 text-slate-500 orange"
               width="256px"
               height="256px"
               viewBox="0 0 8 8"
@@ -52,11 +62,11 @@ const { currentPage } = Astro.props;
         SITE.github && (
           <a
             title="Github"
-            class="opacity-80 hover:opacity-100 hover:bg-slate-200 p-2 rounded-full transition-colors"
+            class="opacity-80 hover:opacity-100 hover:bg-blue-100 p-2 rounded-full transition-colors"
             href={"https://github.com/" + SITE.github}
           >
             <svg
-              class="h-7 w-7 text-slate-500 hover:text-black"
+              class="h-7 w-7 text-slate-500 black"
               width="256px"
               height="256px"
               viewBox="0 0 32 32"
@@ -71,11 +81,11 @@ const { currentPage } = Astro.props;
         SITE.zenn && (
           <a
             title="zenn"
-            class="opacity-80 hover:opacity-100 hover:bg-slate-200 p-2 rounded-full transition-colors"
+            class="opacity-80 hover:opacity-100 hover:bg-blue-100 rounded-full p-2 transition-colors"
             href={"https://zenn.dev/" + SITE.zenn}
           >
             <svg
-              class="h-7 w-7 text-slate-500 hover:text-[#3EA8FF]"
+              class="h-7 w-7 text-slate-500 blue"
               width="256px"
               height="256px"
               viewBox="0 0 24 24"

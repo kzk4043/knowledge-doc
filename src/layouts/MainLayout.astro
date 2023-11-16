@@ -9,7 +9,7 @@ import * as CONFIG from "../config";
 import "../styles/main.scss";
 
 const { content = {}, headings = [] } = Astro.props;
-const currentPage = new URL(Astro.request.url).pathname;
+const currentPage = new URL(Astro.url).pathname;
 // const currentFile = `src/pages${currentPage.replace(/\/$/, '')}.md`;
 ---
 
@@ -44,7 +44,7 @@ const currentPage = new URL(Astro.request.url).pathname;
 
   <body class="bg-slate-100">
     <div class="sticky top-0 z-10 w-full">
-      <Header currentPage={currentPage} />
+      <Header />
     </div>
     <div class="max-w-7xl mx-auto px-4">
       <div
