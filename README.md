@@ -7,7 +7,6 @@ TODO
 - [] ダークモード
 - [] 右サイドバーを Heading のレベルで出し分け
   - 今いる場所を強調
-- [] RSS feed
 
 # Astro Design System Theme
 
