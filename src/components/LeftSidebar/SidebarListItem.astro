@@ -8,11 +8,19 @@ const isCurrentPage = (item) => {
   return false;
 };
 
+// TODO: テスト用、消す
 console.log({ currentPage, item });
 console.log("isCurrentPage:", isCurrentPage(item));
+// TODO: テスト用、消す
 
 const baseClasses =
   "block py-2 px-6  my-1 transition-colors border-l text-slate-500";
+
+  // TODO: テスト用、消す
+const myFunction = () => {
+  console.log("myFunction");
+};
+// TODO: テスト用、消す
 ---
 
 {
@@ -30,11 +38,43 @@ const baseClasses =
       <li
         class={
           baseClasses +
-          " hover:border-slate-400 hover:text-slate-900 hover:bg-main-blue-05"
+          " hover:border-slate-400 hover:text-slate-900 hover:bg-main-blue-05 console"
         }
+        data-current-page={currentPage}
+        data-item={JSON.stringify(item)}
       >
         {item.text}
       </li>
     </a>
   )
 }
+
+<!-- TODO: テスト用、消す -->
+<!-- <script>
+  const { currentPage, item } = Astro.props;
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll('li.console');
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener('mouseover', () => {
+      console.log('test: mouseover ---------------------------------');
+      console.log({item, currentPage});
+    });
+  });
+</script> -->
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll('li.console');
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener('mouseover', () => {
+      const currentPage = button.dataset.currentPage;
+      const item = JSON.parse(button.dataset.item);
+      console.log('test: mouseover ---------------------------------');
+      console.log({item, currentPage});
+    });
+  });
+</script>
+<!-- TODO: テスト用、消す -->
