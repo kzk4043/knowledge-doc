@@ -20,22 +20,6 @@ export const OPEN_GRAPH = {
  * header: true であれば、トップにカード表示される
  */
 export const SIDEBAR = [
-  // TODO: 余分なリンク消す
-  // { text: "Core", header: true },
-  // { text: "Introduction", link: "/core/introduction" },
-  // { text: "Colors", link: "/core/colors" },
-  // { text: "Typography", link: "/core/typography" },
-  // { text: "Shadows", link: "/core/shadows" },
-
-  // { text: "Components", header: true },
-  // { text: "Buttons", link: "/components/buttons" },
-  // { text: "Input", link: "/components/input" },
-  // { text: "Status pills", link: "/components/status-pill" },
-  // { text: "Table", link: "/components/table" },
-
-  // { text: "Patterns", header: true },
-  // { text: "Introduction", link: "/patterns/introduction" },
-
   // 全体/一般
   {
     text: "全体/一般",
@@ -45,6 +29,7 @@ export const SIDEBAR = [
     image: "/images/general.png",
   },
   { text: "Introduction", link: "/general/introduction" },
+  { text: "身体管理", link: "/general/body" },
 
   // プロジェクトマネジメント
   {
