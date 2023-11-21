@@ -4,15 +4,15 @@ import SkipToContent from "./SkipToContent.astro";
 ---
 
 <header
-  class="p-3 bg-slate-100 bg-opacity-80 backdrop-blur-md border-b text-slate-900"
+  class="border-b bg-slate-100 bg-opacity-80 p-3 text-slate-900 backdrop-blur-md"
 >
   <SkipToContent />
   <nav
     title="Top Navigation"
-    class="max-w-7xl mx-auto flex justify-between items-center px-4"
+    class="mx-auto flex max-w-7xl items-center justify-between px-4"
   >
     <div>
-      <a class="font-sans text-lg font-medium flex gap-x-3" href="/">
+      <a class="flex gap-x-3 font-sans text-lg font-medium" href="/">
         <svg
           class="h-7"
           viewBox="0 0 256 256"
@@ -43,11 +43,11 @@ import SkipToContent from "./SkipToContent.astro";
         (
           <a
             title="rss feed"
-            class="opacity-90 hover:opacity-100 hover:bg-blue-100 p-2 rounded-full transition-colors"
+            class="rounded-full p-2 opacity-90 transition-colors hover:bg-blue-100 hover:opacity-100"
             href="/rss.xml"
           >
             <svg
-              class="h-7 w-7 text-slate-500 orange"
+              class="orange h-7 w-7 text-slate-500"
               width="256px"
               height="256px"
               viewBox="0 0 8 8"
@@ -62,11 +62,11 @@ import SkipToContent from "./SkipToContent.astro";
         SITE.github && (
           <a
             title="Github"
-            class="opacity-80 hover:opacity-100 hover:bg-blue-100 p-2 rounded-full transition-colors"
+            class="rounded-full p-2 opacity-80 transition-colors hover:bg-blue-100 hover:opacity-100"
             href={"https://github.com/" + SITE.github}
           >
             <svg
-              class="h-7 w-7 text-slate-500 black"
+              class="black h-7 w-7 text-slate-500"
               width="256px"
               height="256px"
               viewBox="0 0 32 32"
@@ -81,11 +81,11 @@ import SkipToContent from "./SkipToContent.astro";
         SITE.zenn && (
           <a
             title="zenn"
-            class="opacity-80 hover:opacity-100 hover:bg-blue-100 rounded-full p-2 transition-colors"
+            class="rounded-full p-2 opacity-80 transition-colors hover:bg-blue-100 hover:opacity-100"
             href={"https://zenn.dev/" + SITE.zenn}
           >
             <svg
-              class="h-7 w-7 text-slate-500 blue"
+              class="blue h-7 w-7 text-slate-500"
               width="256px"
               height="256px"
               viewBox="0 0 24 24"

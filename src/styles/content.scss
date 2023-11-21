@@ -44,7 +44,7 @@
     list-style: disc;
 
     // マークダウンでネストされた場合、ulもネストされるので調整
-    &>ul {
+    & > ul {
       margin-top: 0rem;
     }
   }
