@@ -41,6 +41,16 @@ export const SIDEBAR = [
   },
   { text: "Introduction", link: "/project-management/introduction" },
 
+  // 開発基礎知識
+  {
+    text: "開発基礎知識",
+    header: true,
+    description: "http、gitなど開発関連の基礎について",
+    url: "/fundamental/introduction",
+    image: "/images/fundamental.png",
+  },
+  { text: "Introduction", link: "/fundamental/introduction" },
+
   // フロントエンド
   {
     text: "フロントエンド",
