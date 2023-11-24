@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ["Fira Code", ...defaultTheme.fontFamily.sans],
       },
+      maxWidth: {
+        "8xl": "1440px",
+      },
       colors: {
         "main-blue": "rgba(29,200,215,1)",
         "main-blue-20": "rgba(29,200,215,.2)",
