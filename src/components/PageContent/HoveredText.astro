@@ -30,7 +30,6 @@ const { displayedText, hoveredText } = Astro.props;
 <script>
   /** displayed-textをクリックしたら、その配下のhovered-textにhoveredクラスを付与する */
   const displayedTexts = document.querySelectorAll(".displayed-text");
-  console.log(displayedTexts);
 
   displayedTexts.forEach((displayedText) => {
     displayedText.addEventListener("click", (event) => {
