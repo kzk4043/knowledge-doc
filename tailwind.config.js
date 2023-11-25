@@ -13,8 +13,10 @@ module.exports = {
       },
       colors: {
         "main-blue": "rgba(29,200,215,1)",
-        "main-blue-20": "rgba(29,200,215,.2)",
-        "main-blue-05": "rgba(29,200,215,.05)",
+        "accenet-orange": "rgba(176, 136, 63, 1)",
+      },
+      textUnderlineOffset: {
+        3: "3px",
       },
     },
   },

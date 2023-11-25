@@ -8,6 +8,13 @@ layout: ../../layouts/MainLayout.astro
 import { SITE } from "../../config";
 import HoveredText from "../../components/PageContent/HoveredText.astro";
 
+{/**
+  * 書き方ルール
+  * ・liは3つまで（HoveredTextを活用する）
+  * ・ネストは１段まで
+  * ・pの文章は丁寧語。ul系は端的に
+  **/}
+
 エンジニアとして仕事を進めていくにあたってなにか困った時に、ブログ記事など事象単位での解決法はありがたいことにたくさんあります。
 が、エンジニアの仕事というフロー全体としての知見はあまりないのかな？と思ったので、自分なりにまとめてみることにしました。
 基本的には自分用の備忘録ではありますが、プロジェクトメンバなどに自分の考えを伝える助けになるとよいなと思っています。
@@ -31,4 +38,4 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 
 - このサイトは筆者の個人的な見解を自由気ままに書いています。会社の見解ではありませんので、ご注意ください。
 - 自分向けの備忘録という意味合いが強いため、わかりにくい部分があるかもしれませんが、ご容赦ください。
-- 補足したい情報がある場合は、<HoveredText displayedText="ホバーしたら表示" hoveredText="補足情報や具体例など" />されるようにしています。
+- 補足したい情報がある場合は、<HoveredText displayedText="ホバーしたら表示" hoveredText="補足情報や具体例など。クリックで固定（範囲外クリックで固定解除）。" />されるようにしています。（[リンクはこの形式](/general/introduction)）

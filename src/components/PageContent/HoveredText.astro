@@ -2,19 +2,52 @@
 const { displayedText, hoveredText } = Astro.props;
 ---
 
-<span class="displayed-text relative cursor-help">
+<span
+  class="displayed-text underline-offset-3 relative cursor-help text-blue-800 underline decoration-dotted"
+>
   {displayedText}
-  <div
-    class="hovered-text pointer-events-none absolute left-0 top-[100%] z-10 w-max max-w-sm -translate-x-1/3 whitespace-pre-line break-all rounded-lg bg-slate-200 px-4 py-2 text-slate-600 opacity-0 transition"
-  >
-    {hoveredText}
-  </div>
+  <span
+    class="hovered-text pointer-events-none absolute -left-4 top-[100%] z-10 w-max max-w-xl bg-transparent p-4 pt-2 text-slate-600 opacity-0"
+    ><span class="block rounded-lg bg-slate-100 shadow-md transition"
+      ><span
+        class="block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-slate-600 transition"
+      >
+        {hoveredText}
+      </span>
+    </span>
+  </span>
 </span>
 
 <style>
   .displayed-text:hover .hovered-text,
-  .hovered-text:hover {
+  .hovered-text:hover,
+  .hovered {
     opacity: 1;
     pointer-events: auto;
   }
 </style>
+
+<script>
+  /** displayed-textをクリックしたら、その配下のhovered-textにhoveredクラスを付与する */
+  const displayedTexts = document.querySelectorAll(".displayed-text");
+  console.log(displayedTexts);
+
+  displayedTexts.forEach((displayedText) => {
+    displayedText.addEventListener("click", (event) => {
+      const targetElement = event.target as Element;
+      const hoveredText = targetElement.querySelector(".hovered-text");
+      hoveredText.classList.toggle("hovered");
+      /** bodyにクリックイベントが伝搬しないようにする */
+      event.stopPropagation();
+    });
+  });
+
+  /** bodyをクリックしたら、すべてのhovered-textからhoveredクラスを削除する */
+  const body = document.querySelector("body");
+  body.addEventListener("click", () => {
+    const hoveredTexts = document.querySelectorAll(".hovered-text");
+    hoveredTexts.forEach((hoveredText) => {
+      hoveredText.classList.remove("hovered");
+    });
+  });
+</script>
