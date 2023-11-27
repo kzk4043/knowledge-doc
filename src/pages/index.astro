@@ -37,7 +37,8 @@ const navItems = SIDEBAR.filter((item) => item.header);
   <div class="min-h-screen bg-slate-100 text-center">
     <!-- nabItemsのaタグの色を変えないように、ここに`.content`を付与 -->
     <header
-      class="content bg-gradient-to-br from-slate-700 to-black px-4 pb-24 pt-12"
+      class="content flex h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-700 to-black px-4 pb-24 pt-12 md:h-min"
+      style="text-wrap: balance;"
     >
       <div class="flex items-center justify-center p-4">
         <div class="text-slate-300">
@@ -78,13 +79,15 @@ const navItems = SIDEBAR.filter((item) => item.header);
         >
       </p>
     </header>
-    <nav class="p-12">
-      <ul class="mx-auto flex max-w-6xl gap-4 text-left">
+    <nav class="p-6 md:p-12">
+      <div
+        class="mx-auto flex w-full max-w-6xl flex-wrap justify-center gap-4 text-left"
+      >
         {
           navItems.map(({ text, description, url, image }) => (
             <a
               href={url}
-              class="flex flex-1 flex-col items-center rounded-md bg-white p-4 transition-all hover:-translate-y-1 hover:shadow-lg"
+              class="flex w-full flex-col items-center rounded-md bg-white p-4 transition-all hover:-translate-y-1 hover:shadow-lg md:w-1/3 lg:w-[23%]"
             >
               <img src={image || "/icons/kzk4043-logo.svg"} alt={text} />
               <h2 class="text-lg font-medium">{text}</h2>
@@ -92,7 +95,7 @@ const navItems = SIDEBAR.filter((item) => item.header);
             </a>
           ))
         }
-      </ul>
+      </div>
     </nav>
   </div>
   <script is:inline></script>
