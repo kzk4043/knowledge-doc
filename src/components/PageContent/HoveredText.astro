@@ -3,14 +3,27 @@ const { displayedText, hoveredText } = Astro.props;
 ---
 
 <span
-  class="displayed-text underline-offset-3 relative cursor-help text-blue-800 underline decoration-dotted"
+  class="displayed-text relative cursor-help text-blue-800 underline decoration-dotted underline-offset-3"
 >
   {displayedText}
+  <!-- pc用 -->
   <span
-    class="hovered-text pointer-events-none absolute -left-4 top-[100%] z-10 w-max max-w-xl bg-transparent p-4 pt-2 text-slate-600 opacity-0"
+    class="hovered-text pointer-events-none absolute -left-4 top-[100%] z-10 hidden w-max max-w-xl bg-transparent p-4 pt-2 text-slate-600 opacity-0 md:block"
     ><span class="block rounded-lg bg-slate-100 shadow-md transition"
       ><span
         class="block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-slate-600 transition"
+      >
+        {hoveredText}
+      </span>
+    </span>
+  </span>
+  <!-- sp用 -->
+  <span
+    class="hovered-text-sp pointer-events-none fixed left-0 top-0 z-10 flex h-screen w-screen items-center justify-center bg-slate-900/30 p-4 text-slate-600 opacity-0 md:hidden"
+  >
+    <span class="z-20 block rounded-lg bg-slate-100 opacity-0 transition">
+      <span
+        class="z-20 block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-slate-600 opacity-0 transition"
       >
         {hoveredText}
       </span>
@@ -21,9 +34,17 @@ const { displayedText, hoveredText } = Astro.props;
 <style>
   .displayed-text:hover .hovered-text,
   .hovered-text:hover,
-  .hovered {
+  .isOpen {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .hovered-text-sp.isOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .hovered-text-sp.isOpen span {
+    opacity: 1;
   }
 </style>
 
@@ -35,7 +56,9 @@ const { displayedText, hoveredText } = Astro.props;
     displayedText.addEventListener("click", (event) => {
       const targetElement = event.target as Element;
       const hoveredText = targetElement.querySelector(".hovered-text");
-      hoveredText.classList.toggle("hovered");
+      const hoveredTextSp = targetElement.querySelector(".hovered-text-sp");
+      hoveredText.classList.toggle("isOpen");
+      hoveredTextSp.classList.toggle("isOpen");
       /** bodyにクリックイベントが伝搬しないようにする */
       event.stopPropagation();
     });
@@ -45,8 +68,13 @@ const { displayedText, hoveredText } = Astro.props;
   const body = document.querySelector("body");
   body.addEventListener("click", () => {
     const hoveredTexts = document.querySelectorAll(".hovered-text");
+    const hoveredTextsSp = document.querySelectorAll(".hovered-text-sp");
+
     hoveredTexts.forEach((hoveredText) => {
-      hoveredText.classList.remove("hovered");
+      hoveredText.classList.remove("isOpen");
+    });
+    hoveredTextsSp.forEach((hoveredTextSp) => {
+      hoveredTextSp.classList.remove("isOpen");
     });
   });
 </script>
