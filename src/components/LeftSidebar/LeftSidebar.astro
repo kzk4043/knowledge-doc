@@ -12,7 +12,7 @@ const { currentPage } = Astro.props;
       {
         SIDEBAR.map((item) =>
           item.header ? (
-            <h2 class="mt-4 font-semibold text-slate-700">{item.text}</h2>
+            <h2 class="mb-1 mt-4 font-semibold text-slate-700">{item.text}</h2>
           ) : (
             <SidebarListItem currentPage={currentPage} item={item} />
           ),
