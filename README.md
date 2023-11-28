@@ -3,10 +3,7 @@
 
 TODO
 
-- [] レスポンシブ
 - [] ダークモード
-- [] 右サイドバーを Heading のレベルで出し分け
-  - 今いる場所を強調
 - [] like機能？
 
 # Astro Design System Theme

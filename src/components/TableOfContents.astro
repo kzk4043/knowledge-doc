@@ -6,10 +6,43 @@ const { headings } = Astro.props;
   {
     headings.map(({ slug, text }) => {
       return (
-        <li class="text-slate-400 hover:text-slate-900">
+        <li id={`toc_${slug}`} class="text-slate-400 hover:text-slate-900">
           #<a href={`#${slug}`}>{text}</a>
         </li>
       );
     })
   }
 </ul>
+<style>
+  .is-viewing {
+    color: theme("colors.slate.900");
+  }
+</style>
+
+<script>
+  /** headingの位置を確認し、ビューポート内に入ったら対応するliにis-viewingクラスを付与する */
+  const headings = document.querySelectorAll("h2, h3, h4, h5, h6");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const { target, isIntersecting } = entry;
+        if (isIntersecting) {
+          /** is-viewingクラスを削除 */
+          const isViewing = document.querySelector(".is-viewing");
+          isViewing?.classList.remove("is-viewing");
+          /** targetのidとliのidが等しい場合、is-viewingクラスを付与 */
+          const id = target.id;
+          const li = document.querySelector(`#toc_${id}`);
+          li?.classList.add("is-viewing");
+        }
+      });
+    },
+    {
+      rootMargin: "-20% 0px -20% 0px",
+    },
+  );
+
+  headings.forEach((heading) => {
+    observer.observe(heading);
+  });
+</script>
