@@ -53,6 +53,17 @@ const { displayedText, hoveredText } = Astro.props;
   const displayedTexts = document.querySelectorAll(".displayed-text");
 
   displayedTexts.forEach((displayedText) => {
+    /** displayedText内のhovered-textをconstで定義 */
+    const hoveredText = displayedText.querySelector(".hovered-text");
+    /** bodyのrightからhoveredTextのrightを引いた値 */
+    const overFlowValue =
+      document.body.getBoundingClientRect().right -
+      hoveredText.getBoundingClientRect().right;
+    // overFlowValueが0以下（ちょっとバッファを持って10とする）の場合、hoveredTextのleftをoverFlowValue分+α px左にずらす
+    if (overFlowValue < 10) {
+      hoveredText.style.left = `${overFlowValue - 20}px`;
+    }
+
     displayedText.addEventListener("click", (event) => {
       const targetElement = event.target as Element;
       const hoveredText = targetElement.querySelector(".hovered-text");
