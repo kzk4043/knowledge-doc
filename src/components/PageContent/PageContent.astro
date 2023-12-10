@@ -28,7 +28,7 @@ const nextPage = sidebarWithoutHeader[currentPageIndex + 1];
         previousPage ? (
           <a
             href={previousPage.link}
-            class="w-full rounded-lg bg-slate-200 px-8 py-4 text-slate-600 shadow-md hover:bg-main-blue/20 md:w-[40%]"
+            class="w-full rounded-lg bg-slate-200 px-8 py-4 text-slate-600 shadow-md hover:bg-main-blue/30 md:w-[40%]"
           >
             ← prev
             <div class="text-xl font-bold">{previousPage.text}</div>
@@ -41,7 +41,7 @@ const nextPage = sidebarWithoutHeader[currentPageIndex + 1];
         nextPage ? (
           <a
             href={nextPage.link}
-            class="w-full rounded-lg bg-slate-200 px-8 py-4 text-right text-slate-600 shadow-md hover:bg-main-blue/20 md:w-[40%]"
+            class="w-full rounded-lg bg-slate-200 px-8 py-4 text-right text-slate-600 shadow-md hover:bg-main-blue/30 md:w-[40%]"
           >
             next →<div class="text-xl font-bold">{nextPage.text}</div>
           </a>
