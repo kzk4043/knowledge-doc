@@ -30,6 +30,7 @@ export const SIDEBAR = [
   },
   { text: "Introduction", link: "/general/introduction" },
   { text: "身体管理", link: "/general/body" },
+  { text: "メンタル管理", link: "/general/mental" },
 
   // プロジェクトマネジメント
   {
