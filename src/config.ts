@@ -29,6 +29,7 @@ export const SIDEBAR = [
     image: "/images/general.png",
   },
   { text: "Introduction", link: "/general/introduction" },
+  { text: "仕事の目的", link: "/general/work" },
   { text: "身体管理", link: "/general/body" },
   { text: "メンタル管理", link: "/general/mental" },
 
