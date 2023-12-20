@@ -57,6 +57,30 @@
       text-underline-offset: 3px;
     }
   }
+  blockquote {
+    position: relative;
+    font-style: italic;
+    margin-top: 1.2rem;
+    margin-bottom: 0.3rem;
+    padding: .6rem .6rem .6rem 1.5rem;
+    border-left: 0.3rem solid theme("colors.slate.400");
+    color: theme("colors.slate.600");
+    background-color: theme("colors.slate.200");
+
+    > p {
+      margin: 0;
+    }
+
+    ::before, ::after {
+      position: absolute;
+      content: "“";
+      font-size: 1.5rem;
+    }
+    ::before {
+      top: 0;
+      left: 0.7rem;
+    }
+  }
 
   code {
     font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco,

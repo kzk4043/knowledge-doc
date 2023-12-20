@@ -3,8 +3,12 @@
 
 TODO
 
-- [] ダークモード
-- [] like機能？
+- HoveredText内でマークダウン有効化
+- ダークモード
+- headingの装飾
+- like機能
+- よく見られているページ
+- weekly 系のFeedページ
 
 # Astro Design System Theme
 
