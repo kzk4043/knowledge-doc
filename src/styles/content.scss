@@ -32,13 +32,29 @@
     font-size: 13pt;
   }
   p,
-  ul {
+  ul,
+  ol {
     margin-top: 1.2rem;
     margin-bottom: 0.3rem;
     color: theme("colors.slate.600");
   }
   ul {
     padding-left: 1.8em;
+
+    > li {
+      padding-left: .2rem; // ちょっと詰まってる感じがしたので調整
+    }
+  }
+  ol {
+    padding-left: 1.8em;
+
+    > li {
+      list-style-type: decimal;
+      padding-left: .6rem; // ちょっと詰まってる感じがしたので調整
+    }
+    > li::marker {
+      font-weight: bold;
+    }
   }
   li {
     list-style: disc;

@@ -42,6 +42,7 @@ export const SIDEBAR = [
     image: "/images/project-management.png",
   },
   { text: "Introduction", link: "/project-management/introduction" },
+  { text: "ミーティング", link: "/project-management/meeting" },
 
   // 開発基礎知識
   {
