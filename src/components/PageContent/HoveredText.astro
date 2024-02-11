@@ -11,7 +11,7 @@ const { displayedText, hoveredText } = Astro.props;
     class="hovered-text pointer-events-none absolute -left-4 top-[100%] z-10 hidden w-max max-w-xl bg-transparent p-4 pt-2 text-slate-600 opacity-0 md:block"
     ><span class="block rounded-lg bg-slate-100 shadow-md transition"
       ><span
-        class="block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-slate-600 transition"
+        class="block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-left font-normal text-slate-600 transition"
       >
         {hoveredText}
       </span>
@@ -23,7 +23,7 @@ const { displayedText, hoveredText } = Astro.props;
   >
     <span class="z-20 block rounded-lg bg-slate-100 opacity-0 transition">
       <span
-        class="z-20 block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-slate-600 opacity-0 transition"
+        class="z-20 block whitespace-pre-line break-all rounded-lg bg-main-blue/[.15] px-4 py-2 text-left font-normal text-slate-600 opacity-0 transition"
       >
         {hoveredText}
       </span>
