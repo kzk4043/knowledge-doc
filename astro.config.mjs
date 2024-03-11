@@ -9,5 +9,5 @@ export default defineConfig({
     tailwind(),
     mdx(),
   ],
-  site: "kzk4043-knowledge-base.netlify.app"
+  site: "https://kzk4043-knowledge-base.netlify.app/"
 });
