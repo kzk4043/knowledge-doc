@@ -1,0 +1,11 @@
+/**
+ * @file Breakpointの定義
+ */
+
+$breakpoint-pc-minwidth: 768px;
+
+@mixin pc {
+  @media only screen and (min-width: $breakpoint-pc-minwidth) {
+    @content;
+  }
+}
