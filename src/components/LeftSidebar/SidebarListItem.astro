@@ -3,7 +3,7 @@ const { currentPage, item } = Astro.props;
 
 const isCurrentPage = (item) => {
   if (item.link) {
-    return currentPage.includes(item.link);
+    return currentPage === item.link;
   }
   return false;
 };
