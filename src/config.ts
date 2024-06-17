@@ -45,6 +45,7 @@ export const SIDEBAR = [
   { text: "Introduction", link: "/project-management/introduction" },
   { text: "ミーティング", link: "/project-management/meeting" },
   { text: "レビュ", link: "/project-management/review" },
+  { text: "レビュ各論", link: "/project-management/review-detail" },
 
   // 開発基礎知識
   {
