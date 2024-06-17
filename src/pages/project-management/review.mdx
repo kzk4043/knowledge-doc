@@ -34,7 +34,7 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
         - 仕様書での考慮不足/無駄を発見、確認、修正している
 2. 開発者が使いやすい
     - パッと見でそこだけ見ればわかる
-        - 可読性
+        - 可読性（コードは書かれるより読まれる方が多い）
         - 一貫性
         - ステートレス、独立性
 
@@ -54,7 +54,7 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 
 - 複数人で見ること自体に意味がある
 - 他チーム含めた全体を見れる
-- 客観的に見れる
+- 客観的に見れる（コード作者の観点から生じるバイアスに影響されないフィードバック可能）
 - 実装者にはない技術・経験・知見
 
 ## レビュの流れ
@@ -127,6 +127,7 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 
 ## 個人的に気をつけたいこと
 
+- 動いているからOKよりは意味がわかったからOKとする
 - 内容は厳しくロジカルに、書き方には気をつける
     - 言い方は柔らかく、相手が素直に受け取ってすぐ動けるように
     - レビュは指示と受け取られやすく、反発されやすいものだと理解する。特にテキストベースだし。
@@ -134,7 +135,8 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
     - あまり具体的な指示は出さないようにしている。それ以外の選択肢が出てこなくなるから
 - 良い点も指摘する
 - 疑問に思ったら調べるより聞く（時間もないし、実装者の方が詳しいはずだから）
-    - 意図の確認は積極的にしたい。Question多めだけど煽ってないので！！
+    - 意図の確認は積極的にしたい。Question多めだけど煽ってないので！笑
+    - 指摘よりも質問を心がける
 - なるべくLinterで解決する
 - レビュを最優先にする
     - いろんなチケットを同時に抱えると、コンテキストが増える
@@ -163,8 +165,11 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 
 ## まとめ
 
+>コードレビュはコードの正しさについての万能の解決策でも唯一のチェック方法でもなく、ソフトウェアをめぐるそのような問題に対抗する多層防御のいち要素
+
 - 仕様確認、仕様調整を時間をかけて丁寧に
 - パッと見でそこだけみればわかるかどうかは結構大事
+- 動いているからOKよりは意味がわかったからOKとする（コードは書くより読まれる方が多い）
 
 ## 参考資料
 
@@ -173,3 +178,4 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 - [コードレビューはつまらないから丁寧なプルリクエストでチームの生産性向上を目指す](https://blog.tai2.net/how-to-code-review.html)
 - [Wantedly Engineering Handbook > コードレビュー](https://docs.wantedly.dev/fields/dev-process/how-to-write-a-pull-request)
 - [Googleのコードレビューのガイドラインに沿って自分がエンジニア1年目に書いたコードをレビューしてみた](https://www.praha-inc.com/lab/posts/code-review)
+- [コードの作者がいるうちに聞こう](https://zenn.dev/link/comments/b5079233ea8dc3)
