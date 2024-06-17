@@ -1,0 +1,205 @@
+---
+title: レビュ観点各論
+pubDate: "2024/06/17"
+description: レビュについて
+layout: ../../layouts/MainLayout.astro
+---
+
+import HoveredText from "../../components/PageContent/HoveredText.astro";
+import OverflowTable from "../../components/PageContent/OverflowTable.astro";
+
+原則なので例外もありますが、以下のような観点で見ています。
+
+## 1. 構造
+
+基本は1ファイルが良いと思っています。全部一箇所で見れた方がいろんなとこ見に行かなくていいから。ただ、
+
+- 別の箇所で再利用する時は切り出す
+- 全部1ファイルだと読みにくくなる時は切り出す
+    - 独立しているものは切り出した方が読みやすいケースが多い
+    - 個人的にstateは切り出すと読みにくくなることもあるかなと思う
+
+### 1-a. [Container / Presentationalパターン](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+
+場合によってはロジックとUIを分けないこともありますが、基本的にはざっくり以下のように分けています。
+
+1. page
+    1. ロジック（Container）コンポ
+    1. UI（Presentational）コンポ
+        1. 見た目コンポ
+            1. html tagコンポ
+
+#### ロジック（Container）コンポ
+
+- cssを持たない
+- stateやロジックを持つ
+- pageがこの責務を持つことも多い
+
+#### 見た目コンポ
+
+- stateは基本もたない
+    - propsで受け取った状態を表示する
+    - UIに関するstateは持ってもよい（アコーディオンの開閉とか）
+- 基本classNameは受け取らず、cssの変更はPropsで出し分け
+
+#### html tagコンポ
+
+- `<button>`などのhtml tagを拡張するコンポ
+- tagと同等扱いなので、classNameを受け取る
+
+```js
+// 基本的には共通で当てたいスタイルと、propsで受け取るスタイルをマージする
+className = {
+    clsx(component固有className, propsのclassName)
+}
+```
+
+<OverflowTable>
+| 種類 | css | state |
+| --- | :---: | :---: |
+| ロジック（Container）コンポ | ✕ | ◯ |
+| 見た目コンポ | ◯propsの値で出し分け | △（UIに関するものは可） |
+| html tagコンポ | ◯classNameを受け取る | ✕ |
+</OverflowTable>
+
+### 1-b. コンポーネント
+
+- 内部に依存しない定数とかはコンポーネントの外に出す
+- コンポ内でコンポを定義しない
+    - 基本は別ファイル切り出し
+    - ごく小さいものなら上部に書く
+- 変数定義が多くなってきたら、別ファイルに切り出すとすっきりしたりする
+
+### 1-c. 早期リターン
+
+- 考慮すべきケースが減るので、読む時に脳のメモリ消費が減る
+
+## 2. 手続き vs 宣言
+
+### 2-a. 手続き（命令）型プログラミング
+
+```html
+<button id="myButton">Click Me</button>
+<p id="myText">Hello, World!</p>
+
+<script>
+    $(document).ready(function() {
+        $("#myButton").click(function() {
+            $("#myText").text("Button Clicked!");
+        });
+    });
+</script>
+```
+
+- プログラムの流れを順番に記述する（素直なプログラミング）
+- letという可変な宣言をし、破壊メソッドなどを使ってその値自体をどんどん更新していく。当然場所によって宣言時とは違う値が入っているので、その時点でその値が何なのか理解するには処理の途中経過を追う必要がある。
+
+#### 具体例
+
+- let(var)
+- for
+- arrayの破壊メソッド系（push, shiftなど）
+- else if / else
+
+### 2-b. 宣言的プログラミング
+
+```js
+const [text, setText] = useState('Hello, World!');
+
+return (
+    <div>
+        <button onClick={() => setText('Button Clicked!')}>Click Me</button>
+        <p>{text}</p>
+    </div>
+);
+```
+
+- 定数aを宣言し、その定数は基本的にずっと一定。
+- 違う状態に遷移する場合には、`b=f(a)`を適用して別の状態を宣言。内部状態を書き換えるのではなく、状態から状態へ遷移
+- jQuery嫌だったんだと思う
+
+#### 良いこと
+
+- 宣言時の値を処理中のどこでもその値として使える。途中の処理を追う必要がなく、コンテキストを理解せずともその値を使える
+- 型システムと相性が良い。型という集合、状態を定義して、その集合から集合への遷移を関数として表現
+- DOMと相性がいい
+- 命名の重要度が上がる。わかりやすい命名をすれば命名を見ただけで何かわかり、そこから値が変わらないわけだから命名だけでプログラムを追える
+
+#### 具体例
+
+- const
+- arrayの非破壊メソッド系（map、filterなど）
+- switch/三項演算子/ショートサーキット
+
+## 3. 全体
+
+### 3-a. 定数
+
+- なるべく減らして、型でしばる
+    - グローバル変数はなるべく減らす（管理大変）
+    - モジュール間のIOに関わるものは定数ではなく、型にする
+- マジックナンバーの説明変数は必要な気がしているが、ページやコンポで閉じる形にならないか
+
+### 3-b. ネスト
+
+- 浅いほうが読みやすい。基本的には1段までにしたい
+- 特にif文でのネストは早期リターンなどで格段に見やすくなることが多い（ベン図とかを書いてみるのをおすすめ）
+
+## 4. JavaScript
+
+### 4-a. null vs undefined
+
+- 使い分けをしだすとややこいので、基本分けない
+
+```js
+// 存在判定は両者を区別せずに行う
+hoge != null
+```
+
+- 基本はundefinedを使う（nullは自然発生しないが、undefinedはするからundefinedに揃える）
+- ただしReactコンポにおいてReactNodeを返さないケースではnull推奨なので、そこだけnull使う
+- 変数展開時の挙動がnull/undefinedで異なるので注意（JSON.stringify時も注意）
+
+```js
+// hogeがundefined時はinitialValueになるが、null時はnullになる
+const { hogeUndefined = "initialValue", hogeNull = "initialValue" } = props;
+console.log(hogeUndefined); // initialValue
+console.log(hogeNull); // null
+```
+
+### 4-b. 忘れがちなfalsyな値
+
+- string: ""
+- number: 0
+- array: `!array`と`array.length === 0`は違う
+
+## 5. TypeScript
+
+- アサーション使わない
+- any使わない
+- as const satisfies
+
+## 6. React
+
+### 6-a. state
+
+- SPA
+    - 画面遷移を伴うstate変更は注意が必要
+- MPA
+    - stateはUI的なstateが中心の認識（モーダルの開閉とか）
+    - state変更＝画面遷移なら不要（初期値を表示するだけ）
+
+### 6-b. [制御コンポーネントと非制御コンポーネント](https://qiita.com/y-suzu/items/8fc2edcd33951733cfcb)
+
+制御コンポーネント
+- 制御コンポーネントとは、フォームの入力値をReactコンポーネント（state）で扱うコンポーネント
+
+非制御コンポーネント（ReactHookForm）
+- 非制御コンポーネントとは、フォームの入力値をDOMで扱うコンポーネント
+- useRefとinput要素のref属性を使用します。
+
+
+## その他
+
+- 不要なコード、ファイルがないか
+- レビュ指摘をためていきたい＆周知したい
