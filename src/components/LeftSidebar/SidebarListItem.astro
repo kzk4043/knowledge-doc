@@ -2,10 +2,11 @@
 const { currentPage, item } = Astro.props;
 
 const isCurrentPage = (item) => {
-  if (item.link) {
-    return currentPage === item.link;
+  if (!item.link) {
+    return;
   }
-  return false;
+
+  return currentPage === item.link;
 };
 
 const baseClasses =
