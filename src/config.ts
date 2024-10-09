@@ -33,6 +33,7 @@ export const SIDEBAR = [
   { text: "身体管理", link: "/general/body" },
   { text: "メンタル管理", link: "/general/mental" },
   { text: "わかる、とは？", link: "/general/understanding" },
+  { text: "人間の行動（学習）動機", link: "/general/motivation" },
   { text: "お金", link: "/general/money" },
   { text: "スプシの使い方", link: "/general/spreadsheet" },
 
