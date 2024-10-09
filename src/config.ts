@@ -32,6 +32,7 @@ export const SIDEBAR = [
   { text: "仕事の目的", link: "/general/work" },
   { text: "身体管理", link: "/general/body" },
   { text: "メンタル管理", link: "/general/mental" },
+  { text: "わかる、とは？", link: "/general/understanding" },
   { text: "お金", link: "/general/money" },
   { text: "スプシの使い方", link: "/general/spreadsheet" },
 
