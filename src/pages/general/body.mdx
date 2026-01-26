@@ -21,6 +21,7 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 - 土日も含め、<HoveredText displayedText="朝は一定の時間に起きる" hoveredText={`寝る時間も一定にした方がいいが、朝一定の時間に起きるという方が強制しやすい`} /> （ブレても30分以内を目指す）
   - 土日だけ昼まで寝る、みたいなことをすると<HoveredText displayedText="火曜ぐらいまで朝がしんどい。。" hoveredText={`概日リズムがずれるらしい`} />
   - 睡眠不足は朝ゆっくり起きるのではなく、<HoveredText displayedText="昼寝や次の日早寝で補う" hoveredText={`睡眠負債は溜まっていくが、睡眠貯金はできないらしい。不思議。壊れたものを修復するっていうものだから？`} />
+  - <HoveredText displayedText="睡眠中央時刻" hoveredText={`寝る時間と起きる時間の真ん中の時間。0時に寝て、8時に起きたら4時。`} />のズレを1時間以内に抑えるといいらしい
   - [クロノタイプ](https://yuchrszk.blogspot.com/p/chrono.html)もちょっと意識
 - <HoveredText displayedText="7~8時間寝る" hoveredText={`睡眠不足はもちろんよくないが、寝すぎも良くないらしい。ただ、特に日本人はほとんどが寝不足なので、基本なるべく寝る方向でいいはず。睡眠は質も大事だが、量ありきの質らしく、質を高めれば量は減らせるっていうものではないらしい。`} />
   - <HoveredText displayedText="スクリーンタイムなどシステムの力を借りてリズムを整える" hoveredText={`- 23時にPC/スマホにスクリーンタイムを設定して寝る準備に入る
@@ -31,6 +32,7 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
   - 夜寝れなくなるので、14時より前にとる
   - だが、そもそも<HoveredText displayedText="昼間眠いのは異常らしい" hoveredText={`めちゃくちゃ眠いけど…睡眠時間足りないのか…。でも昼間眠いかどうかっていうのはざっくり睡眠不足を把握する指標としてよさそう。`} />
 - 夜食をしない
+  - 寝る4時間前まで目安
   - [睡眠不足の影響を抑えられる](https://yuchrszk.blogspot.com/2015/06/blog-post_31.html)らしいので、21時以降は水以外口にしない
   - <HoveredText displayedText="アルコール" hoveredText={`寝酒は最悪らしい。睡眠作用があるので寝れるのだが、質が著しく下がる。日本人は結構酒がないと寝れないという人がいるが、まじでやめたほうがいい。`} />、カフェインの摂取は夕食前くらいまでにする（飲み会はしょうがないが…）
 - 簡単なものでいいので入眠、起床のルーティンを決めておく
@@ -42,14 +44,14 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
   - 静かにする
   - <HoveredText displayedText="快適な温度を保つ" hoveredText={`寝る時にエアコン使うのはなんとなく抵抗あったが、やっぱり睡眠のためには温度管理は結構大事そう。ただ、冬は乾燥したりもするので、濡れタオル干したり。`} />
 - 周りに流されない
-  - 日本人は（私も含め）<HoveredText displayedText="睡眠不足自慢しがち" hoveredText={`なんでなんでしょうね…私はしてしまいがち。だが、日本人は世界的に見てもめちゃくちゃ寝不足らしいので、日本人を基準にして流されない。`} />
+  - 日本人は（私も含め）<HoveredText displayedText="睡眠不足自慢しがち" hoveredText={`なんでなんでしょうね…私はしてしまいがち。だが、日本人は世界的に見てもめちゃくちゃ寝不足らしいので、日本人を基準にして流されない。実際日本、生産性低いわけだし。`} />
 
 ## 食事
 
 食事は睡眠に比べてコントロールが難しい気がする（ちゃんとしようとするとお金と時間がかかる）ので、意識はするものの結構ゆるめ。（[こういうの](https://yuchrszk.blogspot.com/2023/06/85.html)をやりたいがムリ。）
 
 - なるべく<HoveredText displayedText="一定の時間に食べる" hoveredText={`体は一定が好きらしい。これは食事の中でも守りやすい部分なのでなるべくやっていきたい。`} />。
-  - 基本は10/14/18時
+  - 基本は9/13/18時
   - プチ断食で基本的に9-19時の間だけ食事OK
 - 炭水化物、タンパク質、野菜をバランスよく
   - <HoveredText displayedText="魚、野菜を多めに意識" hoveredText={`摂ったほうがいいのに、高いし、少なくなりがちなので。魚はオメガ3脂肪酸（DHAとかEPAとか）といういい油を多く含んでいるらしい。全身の細胞膜の原料であり、細胞の柔軟性？が向上するらしい。`} />
@@ -82,7 +84,7 @@ import HoveredText from "../../components/PageContent/HoveredText.astro";
 - 基本的には階段を使う（家、オフィス）
 - 通勤で2駅分くらい<HoveredText displayedText="歩く or 走る" hoveredText={`無酸素系の運動と有酸素系の運動どちらも生活に取り入れたい。が、わざわざ走りに行くのは特に冬とか億劫になりがちなので、取り入れられるところに少しずつでも取り入れたい。`} />
 - 寝る前にストレッチ
-- 定期的に<HoveredText displayedText="野球をする" hoveredText={`チームスポーツだとわいわいできて楽しいし、筋トレとか頑張ろうという気になる。自分のためだとサボりがち。`} />
+- 定期的に<HoveredText displayedText="野球（スポーツ、特にチームスポーツ）をする" hoveredText={`チームスポーツだとわいわいできて楽しいし、筋トレとか頑張ろうという気になる。自分のためだとサボりがち。`} />
 
 ## その他
 
