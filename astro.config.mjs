@@ -9,5 +9,6 @@ export default defineConfig({
     tailwind(),
     mdx(),
   ],
-  site: "https://kzk4043-knowledge-base.netlify.app/"
+  site: "https://kzk4043-knowledge-base.netlify.app/",
+  trailingSlash: 'always'
 });
